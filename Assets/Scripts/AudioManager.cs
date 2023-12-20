@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     private AudioSource _effectSource;
+    [SerializeField]
+    private AudioSource _musicSource;
 
     [SerializeField]
     private AudioClip _clickSound;
@@ -41,7 +43,8 @@ public class AudioManager : MonoBehaviour
         }
 
         PlayerPrefs.SetInt(Constants.DATA.SETTINGS_SOUND, IsSoundMuted ? 0 : 1);
-        _effectSource.mute = IsSoundMuted;      
+        _effectSource.mute = IsSoundMuted;
+        _musicSource.mute = IsSoundMuted;
 
     }
 
@@ -64,5 +67,6 @@ public class AudioManager : MonoBehaviour
     public void ToggleSound()
     {
         _effectSource.mute = IsSoundMuted;
+        _musicSource.mute = IsSoundMuted;
     }
 }
